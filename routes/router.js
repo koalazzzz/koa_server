@@ -1,6 +1,6 @@
 const router = module.exports = require('koa-router')();
-const Master = require(__dirname + '/models/jazzmaster');
-const errorHandler = require(__dirname + '/lib/error_handler');
+const Master = require(__dirname + '/../models/jazzmaster');
+const errorHandler = require(__dirname + '/../lib/error_handler');
 const bodyParser = require('koa-body-parser');
 
 router.get('/api/jazzmaster', function* () {
@@ -12,7 +12,7 @@ router.get('/api/jazzmaster', function* () {
 
 router.post('/api/jazzmaster/', bodyParser, function* () {
   var newMaster = new Master(this.request.body);
-  yield newMaster.save((err, data) => {
+  yield newMaster.save((err) => {
     if (err) return errorHandler(err);
     this.response.body = 'New Jazz Master uploaded successfully';
   });
