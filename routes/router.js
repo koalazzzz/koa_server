@@ -1,7 +1,7 @@
 const router = module.exports = require('koa-router')();
 const Master = require(__dirname + '/../models/jazzmaster');
 const errorHandler = require(__dirname + '/../lib/error_handler');
-const bodyParser = require('koa-body-parser');
+const bodyParser = require('koa-body-parser')();
 
 router.get('/api/jazzmaster', function* () {
   yield Master.find(null, (err, data) => {
@@ -22,6 +22,6 @@ router.put('/api/jazzmaster/:name', function* () {
 
 });
 
-router.delete('/api/jazzmaster', function* () {
+router.delete('/api/jazzmaster/:name', function* () {
 
 });
