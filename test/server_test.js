@@ -2,13 +2,13 @@
 
 const mongoose = require('mongoose');
 const chai = require('chai');
-const Jazzmaster = require(__dirname + '/../models/jazzmaster');
+const Master = require(__dirname + '/../models/jazzmaster');
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
 // set path for mongo
-process.env.MONGOLAB_URI = 'mongodb://localhost/koa_api_test';
+process.env.MONGOLAB_URI = 'mongodb://localhost/jazzDb';
 // fire up the server
 require(__dirname + '/../lib/server');
 
@@ -29,14 +29,14 @@ describe('Jazzmaster API', () => {
     .end((err, res) => {
       expect(err).to.eql(null);
       expect(res).to.have.status(200);
-      expect(res.body.name).to.eql('Thelonious');
+      expect(res.body).to.eql('New Jazz Master uploaded successfully');
       done();
     });
   });
 
   describe('tests that require an existing db entry', () => {
     beforeEach((done) => {
-      Jazzmaster.create({ name: 'Django' }, (err, data) => {
+      Master.create({ name: 'Django' }, (err, data) => {
         if (err) return process.stdout.write(err);
         this.testJazzmaster = data;
         done();
