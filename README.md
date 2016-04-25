@@ -31,7 +31,7 @@ Model is as follows:
 ### Run the server
 Open another terminal window and navigate to your project's home directory
 ```bash
-> node index.js
+> npm start
 ```
 
 ### CHECK YO' SHIT OUT
