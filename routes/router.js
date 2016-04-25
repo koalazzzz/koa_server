@@ -18,10 +18,23 @@ router.post('/api/jazzmaster/', bodyParser, function* () {
   });
 });
 
-router.put('/api/jazzmaster/:name', function* () {
+router.put('/api/jazzmaster/:id', bodyParser, function* () {
+  var master = this.request.body;
 
+  yield Master.findOne({ 'id': this.params._id }, (err, data) => {
+      if (err) return errorHandler(err);
+
+      data.name = master.name;
+      data.instrument = master.instrument;
+      data.facialHair = master.facialHair;
+      data.save();
+      this.response.body = 'good put';
+  });
 });
 
-router.delete('/api/jazzmaster/:name', function* () {
-
+router.delete('/api/jazzmaster/:id', function* () {
+  yield Master.remove({ _id: this.params.id }, (err) => {
+    if (err) return errorHandler(err);
+    this.response.body = 'good delete';
+  });
 });

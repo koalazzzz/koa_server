@@ -55,7 +55,7 @@ describe('Jazzmaster API', () => {
     });
     it('should be able to DELETE a jazzmaster', (done) => {
       request('localhost:3000')
-      .delete('/api/jazzmaster' + this.jazzmaster._id)
+      .delete('/api/jazzmaster' + this.testJazzmaster._id)
       .end((err, res) => {
         expect(err).to.eql(null);
         expect(res.status).to.eql(200);
