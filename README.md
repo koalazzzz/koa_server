@@ -29,15 +29,15 @@ Model is as follows:
 ```
 
 ### Run the server
-
+Open another terminal window and navigate to your project's home directory
 ```bash
-> node ./lib/server.js
+> node index.js
 ```
 
 ### CHECK YO' SHIT OUT
 
 ```
-open http://localhost:3000/jazzmaster
+open http://localhost:3000/api/jazzmaster
 ```
 
 ## Authors
