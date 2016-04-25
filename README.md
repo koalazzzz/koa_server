@@ -2,7 +2,7 @@
 Simple single resource Mongo-backed REST API built to explore a new HTTP framework for the Codefellows 401 course. We chose Koa.
 
 ## Model
-Model is as follows:
+The model for creating a jazz master is as follows:
 
 ```js
 {
@@ -28,6 +28,11 @@ Model is as follows:
 > mongod --dbpath=./data
 ```
 
+### Run tests
+```bash
+> gulp
+```
+
 ### Run the server
 Open another terminal window and navigate to your project's home directory
 ```bash
@@ -35,9 +40,9 @@ Open another terminal window and navigate to your project's home directory
 ```
 
 ### CHECK YO' SHIT OUT
-
+Type the following in your browser, or use your favorite HTTP client and run a GET request to the URL below
 ```
-open http://localhost:3000/api/jazzmaster
+http://localhost:3000/api/jazzmaster
 ```
 
 ## Authors
