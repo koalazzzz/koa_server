@@ -29,7 +29,7 @@ describe('Jazzmaster API', () => {
     .end((err, res) => {
       expect(err).to.eql(null);
       expect(res).to.have.status(200);
-      expect(res.body).to.eql('New Jazz Master uploaded successfully');
+      expect(res.text).to.eql('New Jazz Master uploaded successfully');
       done();
     });
   });
@@ -49,7 +49,7 @@ describe('Jazzmaster API', () => {
       .end((err, res) => {
         expect(err).to.eql(null);
         expect(res).to.have.status(200);
-        expect(res.body.msg).to.eql('good put');
+        expect(res.text).to.eql('good put');
         done();
       });
     });
@@ -59,7 +59,7 @@ describe('Jazzmaster API', () => {
       .end((err, res) => {
         expect(err).to.eql(null);
         expect(res.status).to.eql(200);
-        expect(res.body.msg).to.eql('good delete');
+        expect(res.text).to.eql('good delete');
         done();
       });
     });
