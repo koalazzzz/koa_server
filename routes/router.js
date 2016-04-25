@@ -21,7 +21,7 @@ router.post('/api/jazzmaster/', bodyParser, function* () {
 router.put('/api/jazzmaster/:id', bodyParser, function* () {
   var master = this.request.body;
 
-  yield Master.findOne({ 'id': this.params._id }, (err, data) => {
+  yield Master.findOne({ '_id': this.params.id }, (err, data) => {
       if (err) return errorHandler(err);
 
       data.name = master.name;
@@ -33,7 +33,7 @@ router.put('/api/jazzmaster/:id', bodyParser, function* () {
 });
 
 router.delete('/api/jazzmaster/:id', function* () {
-  yield Master.remove({ _id: this.params.id }, (err) => {
+  yield Master.remove({ '_id': this.params.id }, (err) => {
     if (err) return errorHandler(err);
     this.response.body = 'good delete';
   });
