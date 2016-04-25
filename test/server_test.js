@@ -10,9 +10,19 @@ const request = chai.request;
 // set path for mongo
 process.env.MONGOLAB_URI = 'mongodb://localhost/jazzDb';
 // fire up the server
-require(__dirname + '/../lib/server');
+const server = require(__dirname + '/../lib/server');
 
 describe('Jazzmaster API', () => {
+  before(() => {
+    server.listen(3000);
+  });
+  after((done) => {
+    mongoose.connection.db.dropDatabase(() => {
+      mongoose.disconnect();
+      server.close();
+      done();
+    });
+  });
   it('should be able to make a GET request at /jazzmaster', (done) => {
     request('localhost:3000')
     .get('/api/jazzmaster')
@@ -63,11 +73,6 @@ describe('Jazzmaster API', () => {
         expect(res.text).to.eql('good delete');
         done();
       });
-    });
-  });
-  after((done) => {
-    mongoose.connection.db.dropDatabase(() => {
-      done();
     });
   });
 });
