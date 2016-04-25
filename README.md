@@ -25,7 +25,7 @@ Model is as follows:
 ### Start mongodb
 
 ```bash
-> mongod --config /usr/local/etc/mongod.conf
+> mongod --dbpath=./data
 ```
 
 ### Run the server
