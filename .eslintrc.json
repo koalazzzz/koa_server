@@ -130,7 +130,7 @@
     "eol-last": 2,
     "func-names": 0,
     "func-style": 0,
-    "keyword-spacing": 2,
+    "keyword-spacing": 0,
     "key-spacing": [
       2,
       {
@@ -174,7 +174,6 @@
       "always"
     ],
     "sort-vars": 0,
-    "keyword-spacing": 2,
     "space-before-function-paren": [
       2,
       "never"
