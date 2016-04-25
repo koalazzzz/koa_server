@@ -46,6 +46,9 @@ Written by
 [Greg Magdsick](https://github.com/gregmagdsick) and
 [Gene Troy](https://github.com/energene)
 
+## Acknowledgements
+[Benjamin Harding](https://github.com/bharding2) gave us some helpful tutorials for learning Koa that saved us an immense amount of time.
+
 ## License
 
 The project is licensed under the terms of the MIT license.
