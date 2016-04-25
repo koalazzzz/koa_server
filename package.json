@@ -4,7 +4,8 @@
   "description": "Single Resource REST API with Koa",
   "main": "/lib/server.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha test"
+    "test": "node_modules/mocha/bin/mocha test",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Greg Magdsick, Gene Troy",
