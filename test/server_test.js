@@ -8,18 +8,15 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
 
-process.env.MONGOLAB_URI = 'mongodb://localhost/jazzDb';
+process.env.MONGOLAB_URI = 'mongodb://localhost/jazzDb_test';
 const server = require(__dirname + '/../lib/server');
 
 describe('Jazzmaster API', () => {
-  before(() => {
-    server.listen(3000);
-  });
   after((done) => {
-    mongoose.disconnect(() => {
+    mongoose.connection.db.dropDatabase(() => {
+      mongoose.disconnect();
       server.close();
-    });
-    done();
+      done();
     });
   });
   it('should be able to make a GET request at /jazzmaster', (done) => {
@@ -44,7 +41,7 @@ describe('Jazzmaster API', () => {
   });
 
   describe('tests that require an existing db entry', () => {
-    beforeEach((done) => {
+    before((done) => {
       Master.create({ name: 'Django' }, (err, data) => {
         if (err) return process.stdout.write(err);
         this.testJazzmaster = data;
@@ -73,3 +70,4 @@ describe('Jazzmaster API', () => {
       });
     });
   });
+});
