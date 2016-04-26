@@ -17,10 +17,10 @@ describe('Jazzmaster API', () => {
     server.listen(3000);
   });
   after((done) => {
-    mongoose.connection.db.dropDatabase(() => {
-      mongoose.disconnect();
+    mongoose.disconnect(() => {
       server.close();
-      done();
+    });
+    done();
     });
   });
   it('should be able to make a GET request at /jazzmaster', (done) => {
@@ -74,4 +74,3 @@ describe('Jazzmaster API', () => {
       });
     });
   });
-});
