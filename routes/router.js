@@ -18,10 +18,10 @@ router.post('/api/jazzmaster/', bodyParser, function* () {
   });
 });
 
-router.put('/api/jazzmaster/:id', bodyParser, function* () {
+router.put('/api/jazzmaster/:name', bodyParser, function* () {
   var master = this.request.body;
 
-  yield Master.findOne({ '_id': this.params.id }, (err, data) => {
+  yield Master.findOne({ 'name': this.params.name }, (err, data) => {
       if (err) return errorHandler(err);
 
       data.name = master.name;
@@ -32,8 +32,8 @@ router.put('/api/jazzmaster/:id', bodyParser, function* () {
   });
 });
 
-router.delete('/api/jazzmaster/:id', function* () {
-  yield Master.remove({ '_id': this.params.id }, (err) => {
+router.delete('/api/jazzmaster/:name', function* () {
+  yield Master.remove({ 'name': this.params.name }, (err) => {
     if (err) return errorHandler(err);
     this.response.body = 'good delete';
   });
