@@ -39,8 +39,8 @@ Open another terminal window and navigate to your project's home directory
 > npm start
 ```
 
-### CHECK YO' SHIT OUT
-Type the following in your browser, or use your favorite HTTP client and run a GET request to the URL below
+### How to use
+Now you can use a HTTP client with standard REST commands that follow the Model defined above to POST, PUT or DELETE jazz masters from the database at the following endpoint.
 ```
 http://localhost:3000/api/jazzmaster
 ```
