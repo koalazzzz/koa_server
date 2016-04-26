@@ -7,9 +7,8 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
-// set path for mongo
+
 process.env.MONGOLAB_URI = 'mongodb://localhost/jazzDb';
-// fire up the server
 const server = require(__dirname + '/../lib/server');
 
 describe('Jazzmaster API', () => {

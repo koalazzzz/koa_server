@@ -40,9 +40,14 @@ Open another terminal window and navigate to your project's home directory
 ```
 
 ### How to use
-Now you can use a HTTP client with standard REST commands that follow the Model defined above to POST, PUT or DELETE jazz masters from the database at the following endpoint.
+Now you can use a HTTP client with standard REST commands to interact with your Jazz Masters database. Using a GET command on the endpoint below will yield all the masters in the database. Using a POST command on the endpoint below will allow you to add a Jazz Master to the database, following teh Model defined above.
 ```
 http://localhost:3000/api/jazzmaster
+```
+
+For PUT and DELETE requests, the endpoint is the same, see below. For a PUT request, you should add all the fields for the Jazz Master, not just the fields you want to change. For a DELETE request, no data is needed to be sent.
+```
+http://localhost:3000/api/jazzmaster/[master name]
 ```
 
 ## Authors

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var jazzmasterSchema = new Schema({
-  name: String,
+  name: { type: String, unique: true },
   instrument: String,
   facialHair: Boolean
 });
