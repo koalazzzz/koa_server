@@ -11,7 +11,7 @@ const request = chai.request;
 process.env.MONGOLAB_URI = 'mongodb://localhost/jazzDb_test';
 const server = require(__dirname + '/../lib/server');
 
-describe('Jazzmaster API', () => {c
+describe('Jazzmaster API', () => {
   after((done) => {
     mongoose.connection.db.dropDatabase(() => {
       mongoose.disconnect();
